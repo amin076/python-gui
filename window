@@ -1,0 +1,5 @@
+from tkinter import *
+root = Tk()
+applabel = Label(root, text="python gui app")
+applabel.pack()
+root.mainloop()
