@@ -1,3 +1,4 @@
+#create simple blanck window
 from tkinter import *
 root = Tk()
 applabel = Label(root, text="python gui app")
