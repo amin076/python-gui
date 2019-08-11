@@ -1,0 +1,8 @@
+#create simple blanck window
+from tkinter import *
+root = Tk()
+root.title("python simple gui")
+root.geometry("700x400")
+fl = Label(root, text="here you can write your name:")
+fl.pack()
+root.mainloop()
