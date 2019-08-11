@@ -1,0 +1,12 @@
+# create simple blank window
+from tkinter import *
+root = Tk()
+root.title("python simple gui")
+root.geometry("700x400")
+# create a canvas
+can = Canvas(root, width=300, height=300, bg="black", bd=2)
+# put an image into canvas
+img = PhotoImage(file="ab.gif")
+can.create_image(20, 20, anchor=NW, image=img)
+can.pack()
+root.mainloop()
