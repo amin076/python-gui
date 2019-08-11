@@ -1,0 +1,25 @@
+from tkinter import *
+
+# create a window
+root = Tk()
+root.title("python simple gui")
+# givig size to window by geometry method
+root.geometry("700x400")
+# create label
+fl = Label(root, text="here you can write your name:",font=15)
+# show label in pack method
+fl.pack()
+# create button named bt1
+bt1 = Button(root, text="Hello", width=20, height=2, font=15)
+# show button in pack method
+bt1.pack()
+# create button named bt2
+bt2 = Button(root, text="goodbye", fg="white", bg="black", width=20, height=2, font=15)
+# show button in pack method
+bt2.pack()
+# create button named bt3
+bt3 = Button(root, text="come here", fg="red", bg="blue", width=20, height=2, font=15, bd=5)
+# show button in pack method
+bt3.pack()
+
+root.mainloop()
