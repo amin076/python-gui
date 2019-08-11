@@ -1,0 +1,24 @@
+# create simple blank window
+from tkinter import *
+root = Tk()
+root.title("python simple gui")
+
+root.geometry("602x602")
+# create a canvas
+cw = 600
+ch = 600
+can = Canvas(root, width=cw, height=ch, bg="white")
+# create shapes inside canvas
+can.pack()
+
+for i in range(8):
+    c1 = i * cw / 8, 0, (i + 1) * cw / 8, ch / 8
+
+    if (i % 2) == 0:
+        color = "#485994"
+    if (i % 2) == 1:
+        color = "#8cb58b"
+    rec1 = can.create_rectangle(c1, fill=color)
+
+
+root.mainloop()
