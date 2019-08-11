@@ -1,0 +1,17 @@
+# create simple blank window
+from tkinter import *
+root = Tk()
+root.title("python simple gui")
+root.geometry("700x400")
+# create a canvas
+can = Canvas(root, width=300, height=300, bg="white", bd=2)
+# create shapes inside canvas
+c1 = 50, 50, 250, 250
+arc = can.create_arc(c1, start=0, extent=270, fill="blue")
+c2 = 50, 50, 150, 150
+rec = can.create_rectangle(c2, fill="red")
+c3 = 150, 150, 250, 250
+rec = can.create_rectangle(c3, fill="green")
+can.pack()
+
+root.mainloop()
