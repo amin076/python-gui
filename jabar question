@@ -1,0 +1,29 @@
+import numpy as np
+
+q = np.random.choice([0, 0, 2, 3, 1, 4, 0], size=(18, 26))
+numbers = []
+rows = len(q)
+columns = len(q[0])
+
+for m in range(rows):
+    for n in range(columns):
+        numbers.append(q[m][n])
+
+
+MinimumNumbers = list(dict.fromkeys(numbers))
+points = {}
+
+for x in MinimumNumbers:
+    y = numbers.count(x)
+    points[x] = y
+
+print("=================================")
+print("the matrix")
+print(q)
+print("=================================")
+print("rows :", rows, "columns :", columns)
+print("=================================")
+print("the numbers are :", MinimumNumbers)
+print("=================================")
+print( "areas : ", points)
+
