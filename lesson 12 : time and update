@@ -1,0 +1,107 @@
+import time
+from tkinter import *
+# window
+root = Tk()
+root.title("simple board 8x8")
+# create a class with many method and functions
+
+
+class BoardMaking:
+
+    def __init__(self, height=350, width=350):
+        self.height = height
+        self.width = width
+        self.buttonMaking()
+        self.canvas = Canvas(root, width=self.width, height=self.height, bg="black")
+        self.canvas.pack()
+
+# create button
+    def buttonMaking(self):
+        self.frame = Frame(root, width=350, bd=2, bg="black", height=350)
+        self.frame.pack()
+        self.button1 = Button(self.frame, text='diameter', fg="white",bg="black", bd=3, width=8, command=self.board2)
+        self.button1.pack(side='left', padx=1, pady=2)
+        self.button2 = Button(self.frame, text='diameters', fg="white",bg="black", bd=3, width=8, command=self.board1)
+        self.button2.pack(side='left', padx=1, pady=2)
+        self.button3 = Button(self.frame, text='bottom', fg="white",bg="black", bd=3, width=8, command=self.board3)
+        self.button3.pack(side='left', padx=1, pady=2)
+        self.button4 = Button(self.frame, text='up ', fg="white",bg="black", width=8, bd=3, command=self.board4)
+        self.button4.pack(side='left', padx=1, pady=2)
+        self.button5 = Button(self.frame, text='clear', fg="white",bg="#855196", width=8, bd=3, command=self.ClearCanvas)
+        self.button5.pack(side='left', padx=1, pady=2)
+
+# function recall with buttons
+    def board1(self):
+        for m in range(8):
+
+            for i in range(8):
+                c1 = i * cw / 8, m * ch / 8, (i + 1) * cw / 8, (m + 1) * ch / 8
+                if ((i + m) % 2) == 0:
+                    color = "#485994"
+
+                if ((i + m) % 2) == 1:
+                    color = "#8cb58b"
+                if i == m:
+                    self.canvas.create_rectangle(c1, fill=color)
+                    self.canvas.update()
+                    time.sleep(.1)
+                if (i + m) == 7:
+                    self.canvas.create_rectangle(c1, fill=color)
+                    self.canvas.update()
+                    time.sleep(.1)
+
+    def board2(self):
+        for m in range(8):
+
+            for i in range(8):
+                c1 = i * cw / 8, m * ch / 8, (i + 1) * cw / 8, (m + 1) * ch / 8
+                if ((i + m) % 2) == 0:
+                    color = "#485994"
+
+                if ((i + m) % 2) == 1:
+                    color = "#8cb58b"
+                if i == m:
+                    self.canvas.create_rectangle(c1, fill=color)
+                    self.canvas.update()
+                    time.sleep(.1)
+
+
+    def board3(self):
+        for m in range(8):
+
+            for i in range(8):
+                c1 = i * cw / 8, m * ch / 8, (i + 1) * cw / 8, (m + 1) * ch / 8
+                if ((i + m) % 2) == 0:
+                    color = "#485994"
+
+                if ((i + m) % 2) == 1:
+                    color = "#8cb58b"
+                if i < m:
+                    self.canvas.create_rectangle(c1, fill=color)
+                    self.canvas.update()
+                    time.sleep(.1)
+
+    def board4(self):
+        for m in range(8):
+
+            for i in range(8):
+                c1 = i * cw / 8, m * ch / 8, (i + 1) * cw / 8, (m + 1) * ch / 8
+                if ((i + m) % 2) == 0:
+                    color = "#485994"
+
+                if ((i + m) % 2) == 1:
+                    color = "#8cb58b"
+                if i > m:
+                    self.canvas.create_rectangle(c1, fill=color)
+                    self.canvas.update()
+                    time.sleep(.1)
+
+    def ClearCanvas(self):
+        self.canvas.delete("all")
+
+
+cw = 350
+ch = 350
+BoardMaking()
+root.mainloop()
+
